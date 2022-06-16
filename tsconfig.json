@@ -4,7 +4,7 @@
     "target": "ESNext",
     "module": "CommonJS",
     "noImplicitAny": true,
-    "outDir": "dist",
+    "outDir": "/dist",
     "rootDir": ".",
     "typeRoots": ["node_modules/@types"]
   },

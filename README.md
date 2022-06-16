@@ -4,7 +4,7 @@ Q: Why? There is allready an existing one [finnhub-js](https://github.com/Finnhu
 
 > A: Because it's not working in every enviroment
 
-## finnhub-ts@1.0.4
+## finnhub-ts@1.0.5
 
 Environment
 
@@ -43,7 +43,7 @@ const finnhubClient = new DefaultApi({
 
 ### For React.js visit my other repo
 
-TODO add link
+[react-finnhub](https://github.com/Rupert-com/react-finnhub)
 
 ### Usage with [Axios interceptors](https://axios-http.com/docs/interceptors)
 
