@@ -1,6 +1,6 @@
 {
   "name": "finnhub-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "OpenAPI client for finnhub-ts",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "bugs": {
     "url": "https://github.com/Rupert-com/finnhub-ts/issues",
-    "email" : "me@ru4ert.com"
+    "email": "me@ru4ert.com"
   },
   "homepage": "https://github.com/Rupert-com/finnhub-ts#readme",
   "keywords": [
