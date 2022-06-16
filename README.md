@@ -1,26 +1,10 @@
 # Finnhub-ts
 
-Why? There is an existing one [finnhub-js](https://github.com/Finnhub-Stock-API/finnhub-js)
+Q: Why? There is allready an existing one [finnhub-js](https://github.com/Finnhub-Stock-API/finnhub-js)
 
-> Because it's not working in every enviroment
+> A: Because it's not working in every enviroment
 
-## Source
-
-Swagger file:
-[swagger.json](https://finnhub.io/static/swagger.json)
-
-OpenAPI Client:
-[openapi-generator-cli.jar](https://github.com/OpenAPITools/openapi-generator)
-
-How generate new version:
-
-1. `java -jar .\openapi-generator-cli.jar generate -i .\swagger.json -o .\ -g typescript-axios --skip-validate-spec -c .\openapi-generator.json`
-2. update npm version
-3. push to npm
-
-## finnhub-ts@1.0.0
-
-This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
+## finnhub-ts@1.0.4
 
 Environment
 
@@ -30,7 +14,6 @@ Environment
 
 Language level
 
-- ES5 - you must have a Promises/A+ library installed
 - ES6
 
 Module system
@@ -40,7 +23,9 @@ Module system
 
 It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
 
-## Usage for 3rd party apps:
+## Usage
+
+### 3rd party apps:
 
 ```typescript
 import { DefaultApi } from 'finnhub-ts'
@@ -209,4 +194,16 @@ const {
 } = finnhubClient
 ```
 
-## Developing:
+## Source and dev info
+
+Swagger file:
+[swagger.json](https://finnhub.io/static/swagger.json)
+
+OpenAPI Client:
+[openapi-generator-cli.jar](https://github.com/OpenAPITools/openapi-generator)
+
+How generate new version:
+
+1. `java -jar .\openapi-generator-cli.jar generate -i .\swagger.json -o .\ -g typescript-axios --skip-validate-spec -c .\openapi-generator.json`
+2. update npm version
+3. push to npm
