@@ -63,6 +63,7 @@ TODO add link
 ### Usage with [Axios interceptors](https://axios-http.com/docs/interceptors)
 
 ```typescript
+//@ts-ignore
 finnhubClient.axios.interceptors.response.use(
   (response) => response,
   (error) => {
