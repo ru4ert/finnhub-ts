@@ -24,6 +24,7 @@ Module system
 It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
 
 ## Usage
+Get your API-Key: https://finnhub.io/register
 
 ### 3rd party apps:
 
