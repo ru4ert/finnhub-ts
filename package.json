@@ -1,6 +1,6 @@
 {
   "name": "finnhub-ts",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "OpenAPI client for finnhub-ts",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
@@ -8,7 +8,8 @@
     "url": "https://github.com/Rupert-com/finnhub-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/Rupert-com/finnhub-ts/issues"
+    "url": "https://github.com/Rupert-com/finnhub-ts/issues",
+    "email" : "me@ru4ert.com"
   },
   "homepage": "https://github.com/Rupert-com/finnhub-ts#readme",
   "keywords": [
@@ -17,9 +18,23 @@
     "typescript",
     "openapi-client",
     "openapi-generator",
-    "finnhub-ts"
+    "finnhub-ts",
+    "stockapi",
+    "quotes",
+    "stock",
+    "stock market",
+    "stock candles",
+    "finance",
+    "ticker",
+    "tickers",
+    "data",
+    "free",
+    "api",
+    "client",
+    "prices",
+    "trading"
   ],
-  "license": "Unlicense",
+  "license": "MIT",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
@@ -27,10 +42,10 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.27.2"
   },
   "devDependencies": {
-    "@types/node": "^12.11.5",
-    "typescript": "^4.0"
+    "@types/node": "^17.0.41",
+    "typescript": "^4.7.3"
   }
 }

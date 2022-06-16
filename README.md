@@ -42,34 +42,170 @@ It can be used in both TypeScript and JavaScript. In TypeScript, the definition 
 
 ## Usage for 3rd party apps:
 
+```typescript
+import { DefaultApi } from 'finnhub-ts'
+const finnhubClient = new DefaultApi({
+  apiKey: 'YOUR-API-KEY',
+  isJsonMime: (input) => {
+    try {
+      JSON.parse(input)
+      return true
+    } catch (error) {}
+    return false
+  },
+})
+```
+
+### For React.js visit my other repo
+
+TODO add link
+
+### Usage with [Axios interceptors](https://axios-http.com/docs/interceptors)
+
+```typescript
+finnhubClient.axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    switch (error.code) {
+      case 'ERR_BAD_REQUEST':
+        // API limit for example (30 calls/second)
+        console.log(error.response.data.error)
+        break
+
+      default:
+        console.log('error: ', error)
+    }
+  }
+)
+```
+
+### Example Usage
+
+```typescript
+companyEarnings('AAPL').then((res) => {
+  console.log(res.data)
+})
+```
+
+Output:
+
+```json
+[
+  {
+    "actual": 2.56,
+    "estimate": 2.38,
+    "period": "2019-03-31",
+    "symbol": "AAPL"
+  },
+  {
+    "actual": 4.21,
+    "estimate": 4.15,
+    "period": "2018-12-31",
+    "symbol": "AAPL"
+  },
+  {
+    "actual": 2.88,
+    "estimate": 2.75,
+    "period": "2018-09-30",
+    "symbol": "AAPL"
+  },
+  {
+    "actual": 2.32,
+    "estimate": 2.11,
+    "period": "2018-06-30",
+    "symbol": "AAPL"
+  }
+]
+```
+
+### All functions
+
+Official [Docs](https://finnhub.io/docs/api/) and API info
+
+```typescript
+const {
+  aggregateIndicator,
+  bondPrice,
+  bondProfile,
+  companyBasicFinancials,
+  companyEarnings,
+  companyEarningsQualityScore,
+  companyEbitEstimates,
+  companyEbitdaEstimates,
+  companyEpsEstimates,
+  companyEsgScore,
+  companyExecutive,
+  companyNews,
+  companyPeers,
+  companyProfile,
+  companyProfile2,
+  companyRevenueEstimates,
+  country,
+  covid19,
+  cryptoCandles,
+  cryptoExchanges,
+  cryptoProfile,
+  cryptoSymbols,
+  earningsCalendar,
+  economicCalendar,
+  economicCode,
+  economicData,
+  etfsCountryExposure,
+  etfsHoldings,
+  etfsProfile,
+  etfsSectorExposure,
+  fdaCommitteeMeetingCalendar,
+  filings,
+  filingsSentiment,
+  financials,
+  financialsReported,
+  forexCandles,
+  forexExchanges,
+  forexRates,
+  forexSymbols,
+  fundOwnership,
+  indicesConstituents,
+  indicesHistoricalConstituents,
+  insiderSentiment,
+  insiderTransactions,
+  internationalFilings,
+  investmentThemes,
+  ipoCalendar,
+  marketNews,
+  mutualFundCountryExposure,
+  mutualFundHoldings,
+  mutualFundProfile,
+  mutualFundSectorExposure,
+  newsSentiment,
+  ownership,
+  patternRecognition,
+  pressReleases,
+  priceTarget,
+  quote,
+  recommendationTrends,
+  revenueBreakdown,
+  similarityIndex,
+  socialSentiment,
+  stockBasicDividends,
+  stockBidask,
+  stockCandles,
+  stockDividends,
+  stockLobbying,
+  stockNbbo,
+  stockSplits,
+  stockSymbols,
+  stockTick,
+  stockUsaSpending,
+  stockUsptoPatent,
+  stockVisaApplication,
+  supplyChainRelationships,
+  supportResistance,
+  symbolSearch,
+  technicalIndicator,
+  transcripts,
+  transcriptsList,
+  upgradeDowngrade,
+} = finnhubClient
+```
+
 ## Developing:
-
-### Building
-
-To build and compile the typescript sources to javascript use:
-
-```
-npm install
-npm run build
-```
-
-### Publishing
-
-First build the package then run `npm publish`
-
-### Consuming
-
-navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
-
-```
-npm install finnhub-ts@1.0.0 --save
-```
-
-_unPublished (not recommended):_
-
-```
-npm install PATH_TO_GENERATED_PACKAGE --save
-elp -g typescript-axios
-```
